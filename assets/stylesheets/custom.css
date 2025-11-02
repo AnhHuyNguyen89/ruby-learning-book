@@ -1,0 +1,438 @@
+/* Define CSS variables instead of SCSS variables */
+:root {
+  --gray-medium-light: #eaeaea;
+  --gray-light: #ccc;
+  --gray: #999;
+  --gray-darker: #555;
+  --state-danger-text: #a94442;
+}
+
+/* universal */
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: normal;
+  color: var(--gray-light);
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#logo:hover {
+  color: #777;
+}
+
+/* body */
+.body-title {
+  min-height: 400px; /* at least 400px tall */
+  padding: 60px 0; /* spacing inside */
+}
+.body_img {
+  display: block; /* makes the link take a full line */
+  text-align: center; /* centers the image inside */
+  margin: 50px auto 0;
+}
+/* footer */
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid var(--gray-medium-light);
+  color: var(--gray-light);
+  display: flex;
+  justify-content: space-between;
+}
+
+footer a {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--gray-darker);
+}
+
+footer .News {
+  padding-right: 50px;
+}
+
+footer small {
+  float: left;
+  padding-left: 50px;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+  display: inline;
+}
+
+/* miscellaneous */
+.debug_dump {
+  clear: both;
+  float: center;
+  width: 100%;
+  margin-top: 45px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  margin: 20px auto;
+  width: 70%;
+  font-family: monospace;
+  font-size: 14px;
+  overflow-x: auto;
+  text-align: left;
+  display: block;
+
+  /* replaced @include box_sizing */
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* sidebar */
+aside section.user_info {
+  margin-top: 20px;
+}
+
+aside section {
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+aside section:first-child {
+  border: 0;
+  padding-top: 0;
+}
+
+aside section span {
+  display: block;
+  margin-bottom: 3px;
+  line-height: 1;
+}
+
+aside section h1 {
+  font-size: 1.4em;
+  text-align: left;
+  letter-spacing: -1px;
+  margin-bottom: 3px;
+  margin-top: 0;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+input,
+textarea,
+select,
+.uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+
+  /* replaced @include box_sizing */
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+#error_explanation ul {
+  color: red;
+  margin: 0 0 30px 0;
+}
+
+.field_with_errors .form-control {
+  color: var(--state-danger-text);
+}
+
+.form-users {
+  justify-content: center;
+  font-weight: bold;
+}
+
+.login_form {
+  justify-content: center;
+  font-weight: bold;
+}
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+
+  span {
+    margin-left: 20px;
+    font-weight: bold;
+  }
+}
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+/* Users index */
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+}
+
+/* Container acts like BS3 .pagination */
+.pagination {
+  text-align: center;
+  margin: 20px 0;
+  /* if your helper outputs inline links, make them sit like a list */
+  font-size: 0; /* remove whitespace gaps between inline-blocks */
+}
+
+/* Links + spans (numbers, prev/next) */
+.pagination a,
+.pagination span {
+  font-size: 14px; /* restore text size */
+  display: inline-block;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  color: #337ab7; /* BS3 link blue */
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: -1px; /* collapse borders like BS3 */
+}
+
+/* First “pill” left radius */
+.pagination a:first-child,
+.pagination span:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-left: 0; /* no negative margin on the first one */
+}
+
+/* Last “pill” right radius */
+.pagination a:last-child,
+.pagination span:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* Hover */
+.pagination a:hover {
+  background-color: #eee;
+  border-color: #ddd;
+  color: #23527c;
+}
+
+/* Active page */
+.pagination .active,
+.pagination .active a,
+.pagination .active span {
+  z-index: 2;
+  color: #fff !important;
+  background-color: #337ab7;
+  border-color: #337ab7;
+  cursor: default;
+}
+
+/* Disabled (should apply to "Previous" when on page 1) */
+.pagination .disabled,
+.pagination .disabled a,
+.pagination .disabled span {
+  color: #777 !important;
+  background-color: #fff;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+/* Optional: center it even if parent is flex/has justify-content-center */
+.pagination.justify-content-center {
+  display: block;
+  text-align: center;
+}
+
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: var(--gray-light);
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+span.image {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+}
+
+.stats a {
+  float: left;
+  padding: 0 10px;
+  border-left: 1px solid var(--gray-light);
+  color: gray;
+}
+
+.stats a:first-child {
+  padding-left: 0;
+  border: 0;
+}
+
+.stats a:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+.stats strong {
+  display: block;
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+}
+
+.user_avatars .gravatar {
+  margin: 1px 1px;
+}
+
+.user_avatars a {
+  padding: 0;
+}
+
+.users.follow {
+  padding: 0;
+}
+
+/* makes the follow button stand out without clashing with Bootstrap */
+.btn-follow-cta {
+  border-width: 2px;
+  letter-spacing: 0.2px;
+  transition: transform 0.06s ease-in-out, box-shadow 0.06s ease-in-out;
+}
+.btn-follow-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0.35rem 0.85rem rgba(0, 0, 0, 0.08);
+}
+
+/* ensure it doesn't get lost on mobile */
+@media (max-width: 576px) {
+  #follow_form form .btn {
+    width: 100%;
+  }
+}

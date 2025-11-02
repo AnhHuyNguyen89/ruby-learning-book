@@ -1,0 +1,57 @@
+<% provide(:title, "Home") %>
+
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4 mt-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+      
+    </aside>
+    <div class="col-md-8 mt-5">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+
+
+  </div>
+<% else %>
+  <div class="container my-5">
+    <!-- Hero Section -->
+    <div class="text-center py-5">
+      <h1 class="display-3 fw-bold">Welcome to the Sample App</h1>
+      <p class="lead text-muted">
+        A Ruby on Rails application that demonstrates user authentication, sessions, and more.
+      </p>
+      <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary my-3" %><br>
+      <%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200"), "https://rubyonrails.org/", class: "body_img" %>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Features Section -->
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <i class="bi bi-box-arrow-in-right fs-1 text-primary"></i>
+        <h3 class="mt-3">Authentication</h3>
+        <p>Secure login and logout with sessions & cookies.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <i class="bi bi-shield-lock fs-1 text-success"></i>
+        <h3 class="mt-3">Security</h3>
+        <p>“Remember me” and password protection keep accounts safe.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <i class="bi bi-people fs-1 text-info"></i>
+        <h3 class="mt-3">User Accounts</h3>
+        <p>Create, edit, and manage your personal account easily.</p>
+      </div>
+    </div>
+  </div>
+<% end %>

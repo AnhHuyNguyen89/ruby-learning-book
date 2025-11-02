@@ -1,0 +1,18 @@
+<!-- app/views/microposts/index.html.erb -->
+<h1>Microposts</h1>
+
+<% @microposts.group_by(&:user).each do |user, posts| %>
+  <h2>User: <%= link_to(user.name.presence || user.email, user) %></h2>
+
+  <% posts.each do |m| %>
+    <div style="margin-bottom: .75rem">
+      <strong>Content:</strong> <%= m.content %><br>
+      <small><%= time_ago_in_words(m.created_at) %> ago</small><br>
+      <%= link_to "Show this micropost", m %>
+    </div>
+  <% end %>
+
+  <hr>
+<% end %>
+
+<%= link_to "New micropost", new_micropost_path %>
